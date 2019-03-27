@@ -1,0 +1,8 @@
+schema {
+  query: RootQuery
+}
+
+type RootQuery {
+  id: ID
+  hello: String
+}
