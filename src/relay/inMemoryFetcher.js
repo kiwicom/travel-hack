@@ -6,6 +6,8 @@ import {
   GraphQLID,
 } from "graphql";
 
+import LocationsQuery from "./graphql/LocationsQuery";
+
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: "RootQuery",
@@ -20,6 +22,7 @@ const schema = new GraphQLSchema({
           return "Welcome to Tequila travel hackathon!";
         },
       },
+      locationsQuery: LocationsQuery,
     },
   }),
 });
