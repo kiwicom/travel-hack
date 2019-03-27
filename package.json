@@ -6,11 +6,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint './**/*.{js,jsx}'",
-    "relay": "yarn babel-node --config=.babelrc scripts/relay-compiler.js"
+    "relay": "yarn babel-node scripts/relay-compiler.js"
   },
   "dependencies": {
+    "@kiwicom/fetch": "^2.3.0",
+    "@kiwicom/graphql-global-id": "^0.8.0",
+    "@kiwicom/graphql-utils": "^0.6.0",
     "@kiwicom/orbit-components": "^0.36.0",
     "@kiwicom/relay": "^1.0.1",
+    "dotenv": "^7.0.0",
+    "dotenv-webpack": "^1.7.0",
     "graphql": "^14.2.0",
     "next": "^8.0.3",
     "react": "^16.8.5",

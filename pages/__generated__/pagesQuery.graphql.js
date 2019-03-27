@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 96a7f616403d9a52347b2339204b641b
+ * @relayHash a3c644155a889047e4d3d33f755ff24b
  */
 
 /* eslint-disable */
@@ -11,7 +11,15 @@
 import type { ConcreteRequest } from 'relay-runtime';
 export type pagesQueryVariables = {||};
 export type pagesQueryResponse = {|
-  +hello: ?string
+  +hello: ?string,
+  +locationsQuery: ?{|
+    +edges: ?$ReadOnlyArray<?{|
+      +node: ?{|
+        +id: string,
+        +name: ?string,
+      |}
+    |}>
+  |},
 |};
 export type pagesQuery = {|
   variables: pagesQueryVariables,
@@ -23,6 +31,14 @@ export type pagesQuery = {|
 /*
 query pagesQuery {
   hello
+  locationsQuery(term: "Barcelona") {
+    edges {
+      node {
+        id
+        name
+      }
+    }
+  }
 }
 */
 
@@ -34,6 +50,60 @@ var v0 = [
     "name": "hello",
     "args": null,
     "storageKey": null
+  },
+  {
+    "kind": "LinkedField",
+    "alias": null,
+    "name": "locationsQuery",
+    "storageKey": "locationsQuery(term:\"Barcelona\")",
+    "args": [
+      {
+        "kind": "Literal",
+        "name": "term",
+        "value": "Barcelona",
+        "type": "String!"
+      }
+    ],
+    "concreteType": "LocationConnection",
+    "plural": false,
+    "selections": [
+      {
+        "kind": "LinkedField",
+        "alias": null,
+        "name": "edges",
+        "storageKey": null,
+        "args": null,
+        "concreteType": "LocationEdge",
+        "plural": true,
+        "selections": [
+          {
+            "kind": "LinkedField",
+            "alias": null,
+            "name": "node",
+            "storageKey": null,
+            "args": null,
+            "concreteType": "Location",
+            "plural": false,
+            "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "id",
+                "args": null,
+                "storageKey": null
+              },
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "name": "name",
+                "args": null,
+                "storageKey": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 return {
@@ -56,11 +126,11 @@ return {
     "operationKind": "query",
     "name": "pagesQuery",
     "id": null,
-    "text": "query pagesQuery {\n  hello\n}\n",
+    "text": "query pagesQuery {\n  hello\n  locationsQuery(term: \"Barcelona\") {\n    edges {\n      node {\n        id\n        name\n      }\n    }\n  }\n}\n",
     "metadata": {}
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '7be8a9eed9b622df07429fc87cce0326';
+(node/*: any*/).hash = '47996e180ffa788a8f74fd799fcb49ae';
 module.exports = node;
