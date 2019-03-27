@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint './**/*.{js,jsx}'"
+    "lint": "eslint './**/*.{js,jsx}'",
+    "relay": "yarn babel-node --config=.babelrc scripts/relay-compiler.js"
   },
   "dependencies": {
     "@kiwicom/orbit-components": "^0.36.0",
@@ -17,11 +18,15 @@
     "styled-components": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/node": "^7.2.2",
     "@kiwicom/babel-preset-kiwicom": "^2.6.2",
     "@kiwicom/eslint-config": "^3.3.3",
     "babel-eslint": "^10.0.1",
     "babel-plugin-styled-components": "^1.8.0",
     "eslint": "^5.15.3"
+  },
+  "peerDependencies": {
+    "relay-runtime": "^3.0.0"
   },
   "license": "ISC"
 }
