@@ -16,7 +16,7 @@ All you have to do is to clone this repository and install dependencies:
 ```bash
 git clone git@github.com:kiwicom/travel-hack.git
 cd travel-hack
-yarn install
+yarn
 ```
 
 You are almost done now! Just simple use this command and start a dev server:
