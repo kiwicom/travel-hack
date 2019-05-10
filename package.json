@@ -12,7 +12,7 @@
     "@kiwicom/fetch": "^2.3.0",
     "@kiwicom/graphql-global-id": "^0.8.0",
     "@kiwicom/graphql-utils": "^0.6.0",
-    "@kiwicom/orbit-components": "^0.36.0",
+    "@kiwicom/orbit-components": "^0.40.1",
     "@kiwicom/relay": "^1.0.1",
     "dotenv": "^7.0.0",
     "dotenv-webpack": "^1.7.0",
